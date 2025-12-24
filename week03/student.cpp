@@ -2,7 +2,12 @@
 
 Student::Student()
 {
-    cout << "Student 기본생성자\n";
+    cout << this << " Student 기본 생성자\n";
+}
+
+Student::~Student()
+{
+    cout << this << " Student 소멸자\n";
 }
 
 void Student::setGPA(double gp)
