@@ -5,6 +5,13 @@ Student::Student()
     cout << this << " Student 기본 생성자\n";
 }
 
+Student::Student(long int id, string name, double gpa)
+    //:id(id), name(name), gpa(gpa)
+    : Person(id, name), gpa(gpa)
+{
+    cout << this << " Student 매개변수 생성자\n";
+}
+
 Student::~Student()
 {
     cout << this << " Student 소멸자\n";

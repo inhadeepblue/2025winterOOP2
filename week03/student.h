@@ -7,6 +7,7 @@ private:
     double gpa;
 public:
     Student();
+    Student(long int id, string name, double gpa);
     ~Student();
     void setGPA(double gpa);
     double getGPA() const;

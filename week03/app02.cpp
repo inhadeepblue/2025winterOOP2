@@ -1,8 +1,5 @@
 #include "person.h"
-#include "person.h"  // #pragma once
 #include "student.h"
-#include "student.h"  // #pragma once
-#include "student.h"  // #pragma once
 
 Person p3;
 
@@ -40,5 +37,8 @@ int main()
 
     s1.setName("Lee Inha");
     cout << "Student Name : " << s1.getName();
+
+    Student s3(555, "Choo Inha", 3.7);
+    cout << s3.getId() << " / " << s3.getName() << " / " << s3.getGPA() << '\n';
     return 0;
 }
