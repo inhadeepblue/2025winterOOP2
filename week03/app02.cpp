@@ -46,5 +46,12 @@ int main()
 
     Student s4(s1);
     cout << s4.getId() << " / " << s1.getName() << " / " << s1.getGPA() << '\n';
+
+    Person* p6 = new Student(489, "King Inha", 4.5);  // LSP
+    //cout << p6->getId() << " / " << p6->getName() << " / " << p6->getGPA() << '\n';
+    cout << p6->getId() << " / " << p6->getName() << '\n';
+    delete p6;
+    p6 = nullptr;
+
     return 0;
 }

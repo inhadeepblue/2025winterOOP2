@@ -4,6 +4,7 @@
 #include <string>
 using namespace std;
 
+//class Person final  // 상속 불가
 class Person
 {
 private:

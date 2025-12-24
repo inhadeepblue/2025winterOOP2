@@ -1,7 +1,7 @@
 #pragma once
 #include "person.h"
 
-class Student : public Person  // inheritance
+class Student final : public Person  // inheritance
 {
 private:
     double gpa;
