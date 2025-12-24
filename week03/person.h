@@ -15,6 +15,7 @@ public:
     //}
     Person();
     Person(long int id, string name);
+    Person(const Person& person);
     ~Person();
 
     void setId(long identity);

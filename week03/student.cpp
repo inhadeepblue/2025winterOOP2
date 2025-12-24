@@ -12,6 +12,12 @@ Student::Student(long int id, string name, double gpa)
     cout << this << " Student 매개변수 생성자\n";
 }
 
+Student::Student(const Student& student)
+    : Person(student), gpa(student.gpa)
+{
+    cout << this << " Student 복사 생성자\n";
+}
+
 Student::~Student()
 {
     cout << this << " Student 소멸자\n";

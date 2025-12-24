@@ -12,6 +12,11 @@ Person::Person(long int id, string name)
     this->name = name;
 }
 
+Person::Person(const Person& person) : id(person.id), name(person.name)
+{
+    cout << this << " Person 복사 생성자\n";
+}
+
 Person::~Person()
 {
     cout << this << " Person 소멸자\n";

@@ -40,5 +40,11 @@ int main()
 
     Student s3(555, "Choo Inha", 3.7);
     cout << s3.getId() << " / " << s3.getName() << " / " << s3.getGPA() << '\n';
+
+    Person p5(p2);
+    cout << p5.getId() << " / " << p5.getName() << '\n';
+
+    Student s4(s1);
+    cout << s4.getId() << " / " << s1.getName() << " / " << s1.getGPA() << '\n';
     return 0;
 }
