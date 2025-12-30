@@ -25,11 +25,12 @@ int main()
 {
 	Animal* pa = new Dog;  // upcasting
 	pa->makeSound();
-	//Dog* pd = (Dog*)pa;  // c style downcasting (old)
-	Dog* pd = dynamic_cast<Dog*>(pa);  // c++11 style downcasting (modern)
-	pd->makeSound();
-	delete pd;
-	pd = nullptr;
+	//Cat* pc = (Cat*)pa;  // Danger! c style downcasting
+	Cat* pc = dynamic_cast<Cat*>(pa);  // Safe! c++11 style downcasting
+	cout << pa << " / " << pc << '\n';
+	pc->makeSound();	
+	delete pc;
+	pc = nullptr;
 
 	//Animal a;
 	//a.makeSound();
