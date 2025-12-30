@@ -12,10 +12,10 @@ protected:
 public:
     Pokemon(const char* name, int level, int hp) : level(level), hp(hp) {
         strcpy(this->name, name);
-        cout << name << "가(이) 나타났다!" << endl;
+        cout << name << "가(이) 나타났다!(부모클래스 생성자）" << endl;
     }
     ~Pokemon() {
-        cout << name << "는(은) 사라졌다..." << endl;
+        cout << name << "는(은) 사라졌다...(부모클래스 소멸자)" << endl;
     }
     void info() const {
         cout << "====== " << name << " ======" << endl;
@@ -35,6 +35,10 @@ class Charizard : public Pokemon {
 public:
     Charizard(const char* name, int level, int hp)
         : Pokemon(name, level, hp) {
+        cout << name << "가(이) 나타났다!(자식클래스 생성자)" << endl;
+    }
+    ~Charizard() {
+        cout << name << "는(은) 사라졌다...(자식클래스 소멸자)" << endl;
     }
     void info() const {
         Pokemon::info();
@@ -48,6 +52,10 @@ class Pikachu : public Pokemon {
 public:
     Pikachu(const char* name, int level, int hp) 
         : Pokemon(name, level, hp) {
+        cout << name << "가(이) 나타났다!(자식클래스 생성자)" << endl;
+    }
+    ~Pikachu() {
+        cout << name << "는(은) 사라졌다...(자식클래스 소멸자)" << endl;
     }
     void info() const {
         Pokemon::info();
@@ -64,6 +72,10 @@ class Squirtle : public Pokemon {
 public:
     Squirtle(const char* name, int level, int hp) 
         : Pokemon(name, level, hp) {
+        cout << name << "가(이) 나타났다!(자식클래스 생성자)" << endl;
+    }
+    ~Squirtle() {
+        cout << name << "는(은) 사라졌다...(자식클래스 소멸자)" << endl;
     }
     void info() const {
         Pokemon::info();
@@ -75,19 +87,23 @@ public:
 };
 int main() {
     Charizard c("리자몽", 15, 60);
-    Pikachu   p("피카츄", 10, 35);
+    Pikachu   p1("피카츄", 10, 35);
     Squirtle  s("꼬부기", 12, 45);
+    Pokemon* p2 = new Pikachu("야생의 피카츄", 20, 100);
 
     c.info();
     cout << endl;
-    p.info();
+    p1.info();
     cout << endl;
     s.info();
     cout << endl;
+    p2->info();
+    cout << endl;
+    delete p2;
 
     Pokemon* team[3];
     team[0] = &c;
-    team[1] = &p;
+    team[1] = &p1;
     team[2] = &s;
 
     for (int i = 0; i < 3; ++i) {
@@ -96,7 +112,7 @@ int main() {
         cout << endl;
     }
 
-    p.pikaVoice();
+    p1.pikaVoice();
 
     cout << endl << "프로그램 종료" << endl;
     return 0;
