@@ -14,7 +14,7 @@ public:
         strcpy(this->name, name);
         cout << name << "가(이) 나타났다!(부모클래스 생성자）" << endl;
     }
-    ~Pokemon() {
+    virtual ~Pokemon() {
         cout << name << "는(은) 사라졌다...(부모클래스 소멸자)" << endl;
     }
     void info() const {
@@ -98,22 +98,23 @@ int main() {
     s.info();
     cout << endl;
     p2->info();
-    cout << endl;
-    delete p2;
+    cout << endl;    
 
-    Pokemon* team[3];
+    Pokemon* team[4];
     team[0] = &c;
     team[1] = &p1;
     team[2] = &s;
+    team[3] = p2;
 
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < 4; ++i) {
         team[i]->attack();
         team[i]->levelUp();
         cout << endl;
     }
 
     p1.pikaVoice();
-
+    delete p2;
+    p2 = nullptr;
     cout << endl << "프로그램 종료" << endl;
     return 0;
 }
