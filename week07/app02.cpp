@@ -3,10 +3,12 @@
 using namespace std;
 
 class Complex {
-public:
+private:
     int real;
     int imaginary;
+    friend ostream& operator<<(ostream& out, const Complex& right);
 
+public:
     Complex(int real, int imaginary) : real(real), imaginary(imaginary) {
     }
     // Overloading as a member function
@@ -37,7 +39,6 @@ ostream& operator<<(ostream& out, const Complex& right) {
 int main()
 {
     Complex c1(9, 7);
-    cout << c1.real << "+" << c1.imaginary << "i\n";
     cout << c1;
 
     return 0;
