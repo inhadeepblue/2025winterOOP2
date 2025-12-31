@@ -13,6 +13,16 @@ public:
     Complex operator+(const Complex& right) {
         return Complex(this->real + right.real, this->imaginary + right.imaginary);
     }
+    Complex& operator++() {
+        this->real = this->real + 1;
+        //return Complex(this->real, this->imaginary);
+        return *this;
+    }
+    Complex& operator++(int) {
+        Complex previous(this->real, this->imaginary);
+        this->real = this->real + 1;
+        return previous;
+    }
 };
 
 // Overloading as a nonmember function
@@ -30,6 +40,12 @@ int main()
     Complex c3 = c1 + c2;
 
     cout << c3.real << "+" << c3.imaginary << "i\n";
+    //++c3;
+    //c3++;
+    Complex c4 = ++c3;
+    //Complex c4 = c3++;
+    cout << c3.real << "+" << c3.imaginary << "i\n";
+    cout << c4.real << "+" << c4.imaginary << "i\n";
 
     return 0;
 }
