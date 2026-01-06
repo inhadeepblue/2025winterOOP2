@@ -16,3 +16,14 @@ DynamicArray::~DynamicArray()
 	delete ptr;
 	ptr = nullptr;
 }
+
+void DynamicArray::setAt(int value, int index)
+{
+	cout << "힙메모리 " << index << "번 위치에 값 " << value <<" 할당\n";
+	ptr[index] = value;
+}
+
+int DynamicArray::getAt(int index)
+{
+	return ptr[index];
+}

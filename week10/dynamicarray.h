@@ -9,4 +9,6 @@ public:
 	DynamicArray();
 	DynamicArray(int size);
 	~DynamicArray();
+	void setAt(int value, int index);
+	int getAt(int index);
 };
