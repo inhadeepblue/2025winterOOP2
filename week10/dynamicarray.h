@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 class DynamicArray {
+private:
 	int size;
 	int* ptr;
 public:
