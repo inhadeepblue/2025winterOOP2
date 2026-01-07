@@ -12,8 +12,8 @@ DynamicArray::DynamicArray(int size) : size(size)
 	try {
 		cout << this << "동적배열객체를 생성. 힙메모리 할당!\n";
 		ptr = new int[size];
-		//throw MyMemoryException(1000, this);
-		//cout << this << "이 부분은 실행안됨!\n";
+		throw MyMemoryException(1000, this);
+		cout << this << "이 부분은 실행안됨!\n";
 	}
 	catch(...){
 		delete[] ptr;

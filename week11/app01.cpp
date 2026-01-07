@@ -3,14 +3,14 @@
 
 int main()
 {
-    DynamicArray da1(5);
-    DynamicArray da2(99);
-
     try {
+        DynamicArray da1(5);
+        DynamicArray da2(99);
+
         da1.setAt(100, 3);
         cout << da1.getAt(3) << '\n';
         //cout << da1.getAt(9) << '\n';  // 4886
-        da1.setAt(-99, 7);  // 4885
+        //da1.setAt(-99, 7);  // 4885
         //cout << da1.getAt(-11) << '\n';  // 4886
     }
     //catch (int err) {
