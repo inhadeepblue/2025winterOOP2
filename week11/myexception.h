@@ -7,4 +7,5 @@ public:
 	DynamicArray* errorAddress;
 
 	MyException(int errorCode, const char* errorDescription, DynamicArray* errorAddress);
+	virtual ~MyException();
 };

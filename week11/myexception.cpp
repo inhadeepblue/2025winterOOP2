@@ -5,3 +5,7 @@ MyException::MyException(int errorCode, const char* errorDescription, DynamicArr
 	:errorCode(errorCode), errorDescription(errorDescription), errorAddress(errorAddress)
 {
 }
+
+MyException::~MyException()
+{
+}

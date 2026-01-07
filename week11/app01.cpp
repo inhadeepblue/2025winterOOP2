@@ -9,8 +9,8 @@ int main()
     try {
         da1.setAt(100, 3);
         cout << da1.getAt(3) << '\n';
-        cout << da1.getAt(9) << '\n';  // 4886
-        //da1.setAt(-99, 7);  // 4885
+        //cout << da1.getAt(9) << '\n';  // 4886
+        da1.setAt(-99, 7);  // 4885
         //cout << da1.getAt(-11) << '\n';  // 4886
     }
     //catch (int err) {
