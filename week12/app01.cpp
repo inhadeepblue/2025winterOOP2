@@ -65,12 +65,14 @@ ostream& operator<<(ostream& o, const Pokemon& pokemon) {
     o << pokemon.hp << '\n';
     return o;
 }
+typedef Stack<int> iStack;
+typedef Stack<Pokemon> pokemonStack;
 int main()
 {
     Pokemon pikachu(100);
     Pokemon squirtle(120);
-    Stack<int> stack(3);
-    Stack<Pokemon> jiwoo(4);
+    iStack stack(3);
+    pokemonStack jiwoo(4);
     jiwoo.push(squirtle);
     jiwoo.push(pikachu);
     stack.push(7);
