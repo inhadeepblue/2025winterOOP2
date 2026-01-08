@@ -6,16 +6,23 @@ using namespace std;
 int main()
 {
     char ch;
-    ifstream week12("week12.txt");
-    if (!week12.is_open())
+    ifstream original("week12.txt", ios::in);
+    ofstream copy("week12_backup.txt", ios::out);
+    if (!original.is_open())
     {
-        cout << "week12.txt 파일을 열 수 없습니다." << endl;
+        cout << "week12.txt 을 열 수 없습니다." << endl;
         assert(false);
     }
-    while (week12.get(ch))
+    if (!copy.is_open())
     {
-        cout.put(ch);
+        cout << "week12_backup 을 열 수 없습니다." << endl;
+        assert(false);
     }
-    week12.close();
+    while (original.get(ch))
+    {
+        copy.put(ch);
+    }
+    original.close();
+    copy.close();
     return 0;
 }
