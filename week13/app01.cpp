@@ -16,9 +16,9 @@ int main()
         //vec.push_front(i * 2);  // not exist
     }
     
-    for (auto iter = vec.begin(); iter != vec.end(); ++iter)
+    for (auto v : vec)
     {
-        cout << setw(3) << *iter;
+        cout << setw(3) << v;
     }
     cout << endl;
 
