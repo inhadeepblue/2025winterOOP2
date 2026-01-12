@@ -5,27 +5,22 @@ using namespace std;
 
 int main()
 {
-    //vector<int> vec(10);
-    vector<int> vec;
+    vector<int> vec(10, 0);    
+    vector<int>::iterator it;
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 9; i++)
     {
-        //vec.at(i) = i * 2;
-        //vec[i] = i * 2;
-        vec.push_back(i * 2);
-        //vec.push_front(i * 2);  // not exist
+        vec[i] = i * 2;
     }
-    
-    for (auto v : vec)
+    vec.insert(vec.begin()+1, 111);
+    //vec.pop_back();
+    //vec.clear();
+    vec.erase(vec.begin() + 3);
+    for (it = vec.begin(); it != vec.end(); ++it)
     {
-        cout << setw(3) << v;
+        cout << setw(3) << *it;
     }
     cout << endl;
 
-    for (auto rIter = vec.rbegin(); rIter != vec.rend(); ++rIter)
-    {
-        cout << setw(3) << *rIter;
-    }
-    cout << endl;
     return 0;
 }
