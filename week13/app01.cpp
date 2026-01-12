@@ -16,13 +16,13 @@ int main()
         //vec.push_front(i * 2);  // not exist
     }
     
-    for (vector<int>::iterator iter = vec.begin(); iter != vec.end(); ++iter)
+    for (auto iter = vec.begin(); iter != vec.end(); ++iter)
     {
         cout << setw(3) << *iter;
     }
     cout << endl;
 
-    for (vector<int>::reverse_iterator rIter = vec.rbegin(); rIter != vec.rend(); ++rIter)
+    for (auto rIter = vec.rbegin(); rIter != vec.rend(); ++rIter)
     {
         cout << setw(3) << *rIter;
     }
